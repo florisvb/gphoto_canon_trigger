@@ -14,5 +14,6 @@
 
 ### Run a ROS node and trigger with ROS
 1. run `roscore`
-1. run the ROS node: `rosrun gphoto_canon_trigger gphoto_canon_trigger.py`, optionally specify serial, directory to save photos, and topic names (see `rosrun gphoto_canon_trigger gphoto_canon_trigger.py --help`)
-2. publish something (any floating integer) on the trigger topic (the default of which is `/gphoto_trigger`). for example: `rostopic pub /gphoto_trigger std_msgs/Int32 1`
+2. run the ROS node: `rosrun gphoto_canon_trigger gphoto_canon_trigger.py`, optionally specify serial, directory to save photos, and topic names (see `rosrun gphoto_canon_trigger gphoto_canon_trigger.py --help`)
+3. publish something (any floating integer) on the trigger topic (the default of which is `/gphoto_trigger`). for example: `rostopic pub /gphoto_trigger std_msgs/Int32 1`
+4. the filename of the file should be sent out on another ROS topic, default: `gphoto_filenames`. You can use this to synchronize the images with other ROS events. 
